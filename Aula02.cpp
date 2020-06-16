@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
 		std::cout << "mensagem imprimida" << std::endl;
 		return 0;
 	}
-	else if (std::strcmp(argv[1],"add") && argc > 2)
+	else if (std::strcmp(argv[1],"add") == 0 && argc > 2)
 	{
 		std::cout << "Mensagem: " << argv[3] << " adicionada" << std::endl;
 		return 0;
