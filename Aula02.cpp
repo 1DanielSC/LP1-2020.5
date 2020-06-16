@@ -1,8 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstring>
-//colocar no git e mandar o link no discord PRESENCA
-//'text dfdf' //Um parametro so
+
 int main(int argc, char const *argv[])
 {
 	if (argc == 1)
