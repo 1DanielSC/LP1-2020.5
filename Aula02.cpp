@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
 	}
 	else if (std::strcmp(argv[1],"add") == 0 && argc > 2)
 	{
-		std::cout << "Mensagem: " << argv[3] << " adicionada" << std::endl;
+		std::cout << "Mensagem: " << argv[2] << " adicionada" << std::endl;
 		return 0;
 	}
 	
