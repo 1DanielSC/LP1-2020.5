@@ -4,19 +4,19 @@
 
 bool write_file(const std::string& mensagem)
 {
-	std::ofstream arquivo_entrada;
-	arquivo_entrada.open("arquivo.txt");
+	std::ofstream file;
+	file.open("arquivo.txt");
 
-	if (arquivo_entrada.fail())
+	if (file.fail())
 	{
 		std::cout << "Erro ao abrir o arquivo" << std::endl;
 		return false;
 	}
-	if (arquivo_entrada.is_open())
+	if (file.is_open())
 	{
-		arquivo_entrada << mensagem;
+		file << mensagem;
 		std::cout << "Mensagem salva no arquivo" << std::endl;
-		arquivo_entrada.close();
+		file.close();
 		return true;
 	}
 	
