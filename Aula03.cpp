@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <cstring>
 #include <fstream>
 
 bool write_file(const std::string& mensagem)
