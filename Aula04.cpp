@@ -33,7 +33,7 @@ int list()
 }
 
 
-bool write_file(const std::string& mensagem)
+int write_file(const std::string& mensagem)
 {
 	std::ofstream file;
 	file.open("arquivo.txt", std::ios_base::app);
@@ -41,18 +41,18 @@ bool write_file(const std::string& mensagem)
 	if (file.fail())
 	{
 		std::cout << "Erro ao abrir o arquivo" << std::endl;
-		return false;
+		return 1;
 	}
 	if (file.is_open())
 	{
 		file << mensagem << std::endl;
 		std::cout << "Mensagem salva no arquivo" << std::endl;
 		file.close();
-		return true;
+		return 0;
 	}
 	
 	std::cout << "Falha ao escrever no arquivo" << std::endl;
-	return false;
+	return 1;
 }
 
 
@@ -75,19 +75,20 @@ int main(int argc, char const *argv[])
 		return 0;
 	}
 
-	std::string mensagem = argv[2];
-	if (parameter1 == "add" && argc > 2)
-	{
-		std::cout << "Mensagem: " << mensagem << " adicionada" << std::endl;
-		write_file(mensagem);
-		return 0;
-	}
 
 	if (parameter1 == "list" && argc == 2)
 	{
 		return list();
 	}
 
+
+	std::string mensagem = argv[2];
+
+	if (parameter1 == "add" && argc > 2)
+	{
+		std::cout << "Mensagem: " << mensagem << " adicionada" << std::endl;
+		return write_file(mensagem);
+	}
 
 	return 1;
 }
