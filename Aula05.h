@@ -45,6 +45,6 @@ struct Message
 	bool compare_dates(const Message& other_dates);
 	bool compare_times(const Message& other_times);
 
-	void WriteFile();
+	bool WriteFile();
 	void print();
 };
