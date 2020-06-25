@@ -37,7 +37,7 @@ void Diary::add(const std::string& message)
       messages_capacity++;
       messages_size++;
 
-      for (int i = 0; i < messages_capacity; i++)
+      for (size_t i = 0; i < messages_capacity; i++)
       {
         if (i == messages_capacity - 1)
         {
