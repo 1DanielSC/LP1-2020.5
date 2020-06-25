@@ -13,7 +13,7 @@ Diary::Diary(const std::string& filename)
 void Diary::add(const std::string& message)
 {
     // adicionar mensagem no array de mensagens
-	Message example
+	Message example;
   example.content = message;
 
     if (messages_size < messages_capacity)
@@ -38,7 +38,7 @@ void Diary::add(const std::string& message)
 
 }
 
-int Diary::write()
+void Diary::write()
 {
     // gravar as mensagens no disco
 }
