@@ -16,7 +16,7 @@ Diary::~Diary()
 void Diary::add(const std::string& message)
 {
     // adicionar mensagem no array de mensagens
-	  Message example;
+    Message example;
     example.content = message;
 
     std::string CurrentDate = get_current_date();
@@ -37,12 +37,19 @@ void Diary::add(const std::string& message)
       messages_capacity++;
       messages_size++;
 
-      buff = messages;
+      for (int i = 0; i < messages_capacity; i++)
+      {
+        if (i == messages_capacity - 1)
+        {
+          buff[i] = example;
+          break;
+        }
+        buff[i] = messages[i];
+      }
 
       delete[] messages;
-
       messages = buff;
-      messages[messages_size] = example;
+      buff = nullptr;
 
     }
 
@@ -52,6 +59,3 @@ void Diary::write()
 {
     // gravar as mensagens no disco
 }
-/*
-Adicionar data e hora na mensagem agora
-*/
