@@ -11,7 +11,7 @@ $(PROGRAM): main.o Conta.o
 main.o: src/main.cpp include/Conta.h
 	$(COMPILER) $(GCC_FLAGS) -c src/main.cpp
 
-Time.o: src/Conta.cpp include/Conta.h
+Conta.o: src/Conta.cpp include/Conta.h
 	$(COMPILER) $(GCC_FLAGS) -c src/Conta.cpp
 
 
@@ -20,5 +20,5 @@ Time.o: src/Conta.cpp include/Conta.h
 clean:
 	rm *.o $(PROGRAM)
 
-run: Prova02
+run: Aula13
 	./$(PROGRAM)
