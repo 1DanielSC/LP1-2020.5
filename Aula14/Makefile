@@ -8,7 +8,7 @@ all: $(PROGRAM)
 $(PROGRAM): main.o Conta.o Cliente.o Agencia.o
 	$(COMPILER) $(GCC_FLAGS) $(FILES) -o $(PROGRAM)
 
-main.o: src/main.cpp include/Conta.h
+main.o: src/main.cpp include/Conta.h include/Cliente.h include/Agencia.h
 	$(COMPILER) $(GCC_FLAGS) -c src/main.cpp
 
 Conta.o: src/Conta.cpp include/Conta.h
