@@ -1,18 +1,11 @@
 #include "Funcionario.h"
 #include <string>
 
-int Funcionario::quantidadeFuncionarios = 0;
 
 Funcionario::Funcionario(std::string nome, double salario, std::string dataAdmissao, std::string departamento)
-	:Nome{nome}, Salario{salario}, DataAdmissao{dataAdmissao}, Departamento{departamento}
-{
-	quantidadeFuncionarios++;
-}
+	:Nome{nome}, Salario{salario}, DataAdmissao{dataAdmissao}, Departamento{departamento} {}
 
-Funcionario::~Funcionario()
-{
-	quantidadeFuncionarios--;
-}
+Funcionario::~Funcionario() {}
 
 void Funcionario::setNome(std::string nome) {this->Nome = nome;}
 void Funcionario::setSalario(double salario) {this->Salario = salario;}
