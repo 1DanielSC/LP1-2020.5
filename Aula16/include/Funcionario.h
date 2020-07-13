@@ -11,7 +11,6 @@ private:
 	std::string DataAdmissao;
 	std::string Departamento;
 
-	static int quantidadeFuncionarios;
 
 public:
 	Funcionario(std::string nome = "None", double salario = 400.0, std::string dataAdmissao = "None", std::string departamento = "None");
