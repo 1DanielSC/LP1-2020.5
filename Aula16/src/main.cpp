@@ -3,18 +3,52 @@
 #include <string>
 #include <iostream>
 
+void DeallocateFuncionarios(std::vector<Funcionario*> Funcionarios)
+{
+	for(auto& funcionario: Funcionarios)
+	{
+		delete funcionario;
+	}
+
+	Funcionarios.clear();
+}
+
+
 int main()
 {
 	Empresa empresa;
 	empresa.setNome("Extra");
 	empresa.setCNPJ("42.318.949/0001-84");
 
-	empresa.AdicionarFuncionario("Daniel", 450.0, "25/08/2016");
-	empresa.AdicionarFuncionario("Felipe", 450.0, "25/07/2016");
-	empresa.AdicionarFuncionario("Carlos", 450.0, "25/06/2016");
+	std::cout << "Insira o numero de funcionarios: ";
+	int numeroFuncionarios;
+	std::cin >> numeroFuncionarios;
+	std::cin.ignore();
 
-	empresa.AumentoSalarial();
+	std::vector<Funcionario*> Funcionarios;
 
-	empresa.Deallocate();
+	std::string nomeFuncionario;
+	double salarioFuncionario;
+	std::string dataAdmissaoFuncionario;
+
+	for (int i = 0; i < numeroFuncionarios; i++)
+	{
+		std::cout << "Insira o nome do funcionario " << i <<": ";
+		getline(std::cin, nomeFuncionario);
+
+		std::cout << "Insira o salario do funcionario " << i <<": ";
+		std::cin >> salarioFuncionario;
+		std::cin.ignore();
+
+		std::cout << "Insira a data de admissao do funcionario " << i <<": ";
+		getline(std::cin, dataAdmissaoFuncionario);
+		std::cout << std::endl;
+
+		Funcionarios.push_back(new Funcionario(nomeFuncionario, salarioFuncionario, dataAdmissaoFuncionario, empresa.getNome()));
+	}
+
+	empresa.AumentoSalarial(Funcionarios);
+	DeallocateFuncionarios(Funcionarios);
+
 	return 0;
 }
