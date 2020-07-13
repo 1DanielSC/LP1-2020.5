@@ -10,10 +10,10 @@ class Empresa
 private:
 	std::string Nome;
 	std::string CNPJ;
-	std::vector<Funcionario*> Funcionarios;
+	
 
 public:
-	Empresa(std::string nome = "None", std::string cnpj = "None", std::vector<Funcionario*> funcionarios = std::vector<Funcionario*> ());
+	Empresa(std::string nome = "None", std::string cnpj = "None");
 	~Empresa();
 
 
@@ -23,9 +23,8 @@ public:
 	std::string getNome();
 	std::string getCNPJ();
 
-	void AumentoSalarial();
-	void AdicionarFuncionario(std::string nome, double salario, std::string dataAdmissao);
-	void Deallocate();
+	void AumentoSalarial(std::vector<Funcionario*> Funcionarios);
+
 };
 
 
