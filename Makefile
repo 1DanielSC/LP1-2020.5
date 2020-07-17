@@ -1,6 +1,6 @@
 FILES = main.o Cliente.o Estabelecimento.o Produto.o Fornecedor.o
 COMPILER = g++
-PROGRAM = Prova05
+PROGRAM = Supermercado
 GCC_FLAGS = -I include -std=c++11 -Wall
 
 all: $(PROGRAM)
@@ -28,5 +28,5 @@ Fornecedor.o: src/Fornecedor.cpp include/Fornecedor.h include/VectorSupermercado
 clean:
 	rm *.o
 
-run: Prova05
+run: Supermercado
 	./$(PROGRAM)
